@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= typeof title !== 'undefined' ? title : 'My Blog' %></title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="/stylesheets/feed.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#10B981',
+            secondary: '#F3F4F6',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-100">
+  <% if(nav === true){ %>
+    <header class="bg-white shadow-md">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+          <div class="flex items-center">
+            <a href="/feed" class="text-2xl font-bold text-primary hover:text-primary-dark transition duration-300">
+              <i class="ri-quill-pen-line mr-2"></i>My Blog
+            </a>
+          </div>
+          <nav class="flex space-x-4">
+            <a href="/feed" class="text-gray-600 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition duration-300">Home</a>
+            <a href="/profile" class="text-gray-600 hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition duration-300">Profile</a>
+            <a href="/logout" class="bg-primary text-white hover:bg-primary-dark px-3 py-2 rounded-md text-sm font-medium transition duration-300">Logout</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+  <% } %>
+</body>
+</html>
